@@ -14,7 +14,7 @@ function getHumanChoice(_humanChoices) {
     if(_humanChoices === "Rock" || _humanChoices === "Paper" || _humanChoices === "Scissor") {
         return _humanChoices;
     }else {
-        alert("Please choose accordingly");
+        alert("Please choose the correct choices");
     }
 }
 //Return Human and Computer Score. Play round function

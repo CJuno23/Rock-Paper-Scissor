@@ -19,23 +19,51 @@ function getHumanChoice(_humanChoices) {
 }
 //Return Human and Computer Score. Play round function
 function playRound (humanChoice, computerChoice) {
+    const div = document.querySelector("div")
+    let tie = document.createElement("p");
+    let humanWin = document.createElement("p");
+    let computerWin = document.createElement("p");
+    let score = document.createElement("p");
     if (humanChoice === computerChoice) {
-        alert(`Tied! Human: ${humanChoice} Computer: ${computerChoice}`);
+        //alert(`Tied! Human: ${humanChoice} Computer: ${computerChoice}`);
+        tie.textContent = `Tied! Human: ${humanChoice} Computer: ${computerChoice}`
+        div.appendChild(tie);
     }else if (
             humanChoice === "Rock" && computerChoice === "Scissor" ||
             humanChoice === "Paper" && computerChoice === "Rock" ||
             humanChoice === "Scissor" && computerChoice === "Paper"
             ) {
         humanScore++;
-        alert(`You Win! Human: ${humanChoice} beats Computer: ${computerChoice}`);        
+        //alert(`You Win! Human: ${humanChoice} beats Computer: ${computerChoice}`);
+        humanWin.textContent = `You Win! Human: ${humanChoice} beats Computer: ${computerChoice}`
+        div.appendChild(humanWin);   
     }else {
         computerScore++;
-        alert(`You Lose! Computer: ${computerChoice} beats Human: ${humanChoice}`);
+        //alert(`You Lose! Computer: ${computerChoice} beats Human: ${humanChoice}`);
+        computerWin.textContent = `You Lose! Computer: ${computerChoice} beats Human: ${humanChoice}`
+        div.appendChild(computerWin);
     }
-    return (`Human: ${humanScore} Computer: ${computerScore}`);  
+    score.textContent = (`Human: ${humanScore} Computer: ${computerScore}`);
+    div.appendChild(score)
 }
+let humanScore = 0;
+let computerScore = 0;
+//let humanSelection = getHumanChoice(prompt("Rock? Paper? Scissor?"));
+let computerSelection = getComputerChoice(3)
+const button1 = document.querySelector(".rock");
+button1.addEventListener("click", function(){
+    playRound("Rock",getComputerChoice(3));
+});
+const button2 = document.querySelector(".paper");
+button2.addEventListener("click", function(){
+    playRound("Paper",getComputerChoice(3));
+});
+const button3 = document.querySelector(".scissor");
+button3.addEventListener("click", function(){
+    playRound("Scissor", getComputerChoice(3));
+})
 //function entire game
-function playGame () {
+/*function playGame () {
     //round 1
     let humanSelection = getHumanChoice(prompt("Rock? Paper? Scissor?"));
     console.log(`Human select ${humanSelection}`);
@@ -74,9 +102,8 @@ function playGame () {
         alert(`Tied! Human: ${humanScore} Computer: ${computerScore} `);
     }
 }
-let humanScore = 0;
-let computerScore = 0;
-playGame();
+
+playGame();*/
 
 
 

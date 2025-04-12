@@ -57,5 +57,9 @@ button {
 }
 .text-container {
     text-align: center;
-    font-size: 2rem;    
+    font-size: 2rem;
+    color: #F5EEDC;    
+}
+.playAgain {
+    display: none;
 }

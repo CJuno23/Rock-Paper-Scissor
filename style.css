@@ -17,9 +17,9 @@ body {
 }
 .container {
     background-color: #27548A;
-    
     height: 500px;
     color: #F5EEDC;
+    max-width: 1000px;
 }
 .font {
     font-family: Bebas Neue, sans-serif;
@@ -37,7 +37,7 @@ button {
     border: none;
     border-radius: 5px;
     width: 80px;
-    font-family: Bebas Neus, sans-serif;
+    font-family: Bebas Neue, sans-serif;
     cursor: pointer;
 }
 .center {
